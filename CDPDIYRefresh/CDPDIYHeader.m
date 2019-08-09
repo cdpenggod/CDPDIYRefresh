@@ -178,7 +178,7 @@
         if (moveR<=0) {
             moveR=1;
         }
-        CGFloat y=(0.9<=self.pullingPercent)?10:self.mj_h*(1.0-self.pullingPercent);
+        CGFloat y=(0.9<=self.pullingPercent)?10:self.mj_h*(1.0-self.pullingPercent)+2;
         self.imgView.frame=CGRectMake(self.mj_w*0.5-imgR,y,imgR*2,imgR*2);
         self.imgView.layer.cornerRadius=imgR;
         
