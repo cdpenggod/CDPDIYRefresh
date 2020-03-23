@@ -54,7 +54,13 @@
     [self setShadowWithLayer:moveView.layer y:1];
     
     UIActivityIndicatorView *loadView=[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(self.mj_w*0.5-8,42,16,16)];
-    loadView.activityIndicatorViewStyle=UIActivityIndicatorViewStyleGray;
+    if (@available(iOS 13.0, *)) {
+        loadView.activityIndicatorViewStyle=UIActivityIndicatorViewStyleMedium;
+        loadView.color=[UIColor grayColor];
+    }
+    else{
+        loadView.activityIndicatorViewStyle=UIActivityIndicatorViewStyleGray;
+    }
     loadView.hidesWhenStopped=YES;
     [self addSubview:loadView];
     
